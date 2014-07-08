@@ -1,0 +1,2 @@
+sonar-scalastyle-plugin
+=======================
