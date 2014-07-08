@@ -1,0 +1,30 @@
+<rules>
+
+    <rule>
+        <key>line.contains.tab</key>
+        <name>Check that there are no tabs in a file</name>
+        <description>
+            <![CDATA[(No justification in scalastyle_documentation.xml)]]>
+        </description>
+        <internalKey>org.scalastyle.file.FileTabChecker</internalKey>
+        <severity>MAJOR</severity>
+    </rule>
+
+    <rule>
+        <key>file.size.limit</key>
+        <name>Check the number of lines in a file</name>
+        <description>
+            <![CDATA[Files which are too long can be hard to read and understand.]]>
+        </description>
+        <internalKey>org.scalastyle.file.FileLengthChecker</internalKey>
+        <severity>MAJOR</severity>
+        <param>
+            <key>maxFileLength</key>
+            <description>
+                <![CDATA[Maximum file length]]>
+            </description>
+            <defaultValue>1500</defaultValue>
+        </param>
+    </rule>
+
+</rules>
