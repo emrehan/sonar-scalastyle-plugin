@@ -1,0 +1,48 @@
+# Scala
+*.class
+*.log
+
+# sbt
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Java
+*.jar
+*.war
+*.ear
+
+# JVM crash logs
+hs_err_pid*
+
+# Intellij
+.idea/*
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Scala-IDE
+.scala_dependencies
+.worksheet
+
+# Mac OS X
+.DS_Store
+._*
+
+# Maven
+log/
+target/
+
+# Scalastyle
+scalastyle-output.xml
