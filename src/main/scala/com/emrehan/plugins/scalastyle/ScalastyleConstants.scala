@@ -16,21 +16,18 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  */
-package com.emrehan.plugins.scalastyle.rule
-
-import com.emrehan.plugins.scalastyle.ScalastyleConstants
-import com.emrehan.plugins.scalastyle.language.Scala
-import org.sonar.api.server.rule.RulesDefinition.Context
-import org.sonar.api.server.rule.{RulesDefinition, RulesDefinitionXmlLoader}
+package com.emrehan.plugins.scalastyle
 
 /**
- * This class creates rules from the rules.xml file
+ * Constants related to rules
  */
-class ScalastyleRulesDefinition(xmlLoader: RulesDefinitionXmlLoader) extends RulesDefinition {
-
-  override def define(context: Context) {
-    val scalastyleRepo = context.createRepository(ScalastyleConstants.RulesRepoName, Scala.key).setName(ScalastyleConstants.RulesRepoName)
-    xmlLoader.load(scalastyleRepo, getClass.getResourceAsStream(ScalastyleConstants.RulesXmlDirectory), "UTF-8")
-    scalastyleRepo.done
-  }
+object ScalastyleConstants {
+  val PluginName = "Scalastyle"
+  val PluginKey = "scalastyle"
+  val RulesRepoName = "Scalastyle"
+  val RulesRepoKey = "scalastyle"
+  val ProfileName = "Scalastyle"
+  val RulesXmlDirectory = "/rules.xml"
+  val ConfigXmlDirectory = "/scalastyle-config.xml"
+  val ResultsXmlDirectory = "/scalastyle-result.xml"
 }

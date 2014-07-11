@@ -1,0 +1,9 @@
+<scalastyle commentFilter="enabled">
+ <name>Scalastyle</name>
+ <check level="warning" class="org.scalastyle.file.FileTabChecker" enabled="true"></check>
+ <check level="warning" class="org.scalastyle.file.FileLengthChecker" enabled="true">
+  <parameters>
+   <parameter name="maxFileLength"><![CDATA[800]]></parameter>
+  </parameters>
+ </check>
+</scalastyle>

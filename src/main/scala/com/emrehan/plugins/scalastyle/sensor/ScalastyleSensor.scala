@@ -16,13 +16,21 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  */
-package com.emrehan.plugins.scalastyle.rule
+ package com.emrehan.plugins.scalastyle.sensor
 
-/**
- * Constants related to rules
- */
-object ScalastyleRule {
-  val RulesRepoName = "Scalastyle Rules"
-  val ProfileName = "Scalastyle"
-  val RulesXmlDirectory = "/rules.xml"
+import com.emrehan.plugins.scalastyle.language.Scala
+import org.sonar.api.batch.{Sensor, SensorContext}
+import org.sonar.api.profiles.RulesProfile
+import org.sonar.api.resources.Project
+
+class ScalastyleSensor(profile: RulesProfile, executor: ScalastyleExecutor) extends Sensor {
+
+  override def shouldExecuteOnProject(project: Project) =
+    (project.getLanguage != null) && (project.getLanguageKey == Scala.key)
+
+  def analyse(project: Project, context: SensorContext) {
+    executor.execute
+  }
+
+  override val toString = getClass.getSimpleName
 }

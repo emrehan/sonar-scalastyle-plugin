@@ -18,8 +18,9 @@
  */
 package com.emrehan.plugins.scalastyle
 
-import com.emrehan.plugins.scalastyle.language.Scala
-import com.emrehan.plugins.scalastyle.rule.{ScalastyleQualityProfile, ScalastyleRulesDefinition}
+import com.emrehan.plugins.scalastyle.language._
+import com.emrehan.plugins.scalastyle.rule._
+import com.emrehan.plugins.scalastyle.sensor._
 import org.sonar.api.{Extension, SonarPlugin}
 
 import scala.collection.JavaConversions._
@@ -33,7 +34,9 @@ class ScalastylePlugin extends SonarPlugin {
     ListBuffer(
       classOf[Scala],
       classOf[ScalastyleRulesDefinition],
-      classOf[ScalastyleQualityProfile]
+      classOf[ScalastyleQualityProfile],
+      classOf[ScalastyleExecutor],
+      classOf[ScalastyleSensor]
     )
   }
 

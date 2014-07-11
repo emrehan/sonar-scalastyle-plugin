@@ -18,6 +18,7 @@
  */
 package com.emrehan.plugins.scalastyle.rule
 
+import com.emrehan.plugins.scalastyle.ScalastyleConstants
 import com.emrehan.plugins.scalastyle.language.Scala
 import org.sonar.api.profiles.{ProfileDefinition, RulesProfile}
 import org.sonar.api.rules.{Rule, RulePriority}
@@ -28,9 +29,9 @@ import org.sonar.api.utils.ValidationMessages
  */
 class ScalastyleQualityProfile extends ProfileDefinition {
   override def createProfile(validation: ValidationMessages): RulesProfile = {
-    val profile = RulesProfile.create(ScalastyleRule.ProfileName, Scala.key)
-    profile.activateRule(Rule.create(ScalastyleRule.RulesRepoName, "line.contains.tab"), RulePriority.MAJOR)
-    profile.activateRule(Rule.create(ScalastyleRule.RulesRepoName, "file.size.limit"), RulePriority.MAJOR)
+    val profile = RulesProfile.create(ScalastyleConstants.ProfileName, Scala.key)
+    profile.activateRule(Rule.create(ScalastyleConstants.RulesRepoName, "line.contains.tab"), RulePriority.MAJOR)
+    profile.activateRule(Rule.create(ScalastyleConstants.RulesRepoName, "file.size.limit"), RulePriority.MAJOR)
     profile
   }
 }
