@@ -1,3 +1,8 @@
+I'm no longer developing this plugin since Henry Coles [wrote](https://groups.google.com/forum/#!topic/scalastyle-users/ALzi6pVJe3o) to Scalastyle mail group about their prototype. I'm working on their plugin at (github.com/emrehan/sonar-scalastyle)[https://github.com/emrehan/sonar-scalastyle] in order to avoid competing effort.
+
+—Emrehan
+
+---
 # Sonar Scalastyle Plugin
 This plugin integrates Scalastyle with SonarQube.
 
